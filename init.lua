@@ -323,6 +323,7 @@ do
   require('tokyonight').setup {
     styles = {
       comments = { italic = false }, -- Disable italics in comments
+      functions = { bold = true },
     },
   }
 
