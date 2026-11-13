@@ -384,6 +384,23 @@ do
 
   -- ... and there is more!
   --  Check out: https://github.com/nvim-mini/mini.nvim
+
+  -- Oil Neovim
+  -- Run :lua vim.pack.update() to review and apply updates,
+  -- and :lua vim.pack.update(nil, { offline = true }) to inspect state without fetching. 
+  -- Installed versions are tracked in nvim-pack-lock.json
+  -- In buffer, g? for default keymaps
+  vim.pack.add { gh 'stevearc/oil.nvim' }
+  require('oil').setup {
+    default_file_explorer = true,
+    view_options = { show_hidden = true },
+    keymaps = {
+      ['<C-h>'] = false,
+      ['<C-l>'] = false,
+    },
+  }
+  vim.keymap.set('n', '-', '<cmd>Oil<cr>', { desc = 'Open parent directory' })
+
 end
 
 -- ============================================================
